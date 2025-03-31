@@ -5,3 +5,13 @@ jobs:
     runs_on: ubuntu-latest
     steps:
       - name: Get Code
+        uses: actions/checkout@v3
+      - name: Install nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Runs tests
+        run: npm test
+          
